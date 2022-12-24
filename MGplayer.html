@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link rel="stylesheet" href="https://nsu0.github.io/MonkeyGun/CSS/Player.css">
+</head>
+<body style="margin:0">
+
+<h1 id="title">title</h1>
+<iframe id="player" width="700px" height="400px" scrolling="no" style="background:lightgray;border:0;border-radius:5px;" src=""></iframe>
+
+<script>
+if (window.parent.location.hostname == "js.do") {
+
+const params = new Proxy(new URLSearchParams(window.location.search), {
+  get: (searchParams, prop) => searchParams.get(prop),
+});
+
+document.getElementById("player").src = params.gsrc;
+document.getElementById("title").innerText = params.gtitle;
+document.getElementById("player").width = params.width;
+document.getElementById("player").height = params.height;
+} else {
+window.location.replace("about:blank");
+}
+</script>
+
+</body>
+</html>
