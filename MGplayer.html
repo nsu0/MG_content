@@ -20,7 +20,7 @@ document.getElementById("title").innerText = params.gtitle;
 document.getElementById("player").width = params.width;
 document.getElementById("player").height = params.height;
 } else {
-window.location.replace("about:blank");
+document.write("blocked: " + window.parent.location.hostname);
 }
 </script>
 
